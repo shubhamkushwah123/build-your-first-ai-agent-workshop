@@ -34,7 +34,7 @@ Create a **new notebook**.
 
 Rename it:
 
-    my_first_chat_app.ipynb
+    talk_to_llm.ipynb
 
 ## 4. Install Required Libraries
 
