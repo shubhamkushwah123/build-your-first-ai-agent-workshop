@@ -24,6 +24,8 @@ https://play.fresco.me
 ```
 AI Lab
 ```
+<img width="2882" height="1196" alt="image" src="https://github.com/user-attachments/assets/0955e714-b690-451d-85a8-759aec84ecf1" />
+
 
 3. Click **Launch** to start the lab environment.
 4. Wait for the virtual environment to initialize.
@@ -97,6 +99,7 @@ If the configuration is correct:
 - A **response from the model** will be displayed in the terminal.
 
 This confirms that the **MaaS LLM connectivity is working properly**.
+<img width="1212" height="1252" alt="image" src="https://github.com/user-attachments/assets/352b7ea5-4e5f-458a-b1b9-67bd67b8c199" />
 
 ---
 
