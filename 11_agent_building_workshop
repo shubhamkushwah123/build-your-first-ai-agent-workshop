@@ -1,0 +1,37 @@
+from langchain.agents import create_agent
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
+import requests
+from dotenv import load_dotenv
+load_dotenv()
+
+@tool              
+def get_weather():
+    """Get the weather of a given city"""
+    return f"The weather in Chicago is sunny today"
+    
+agent = create_agent(
+    model=ChatOpenAI(model="gpt-5.4-nano"),   
+
+    tools=[get_weather],
+
+    system_prompt="""You are a helpful assistant. Invoke necessary tools as needed and always         
+                   answer all the questions."""
+)
+
+
+result = agent.invoke({
+    "messages": [
+        {"role": "user", "content": "How is the weather in Chicago ?"}
+    ]
+})
+
+for msg in result["messages"]:
+    if msg.__class__.__name__ == "HumanMessage":
+        print(f"\n👤 User: {msg.content}")
+    elif msg.__class__.__name__ == "AIMessage":
+            if msg.tool_calls:
+                print(f"\n🤖 AI (tool call): {msg.tool_calls}")
+            else:
+                print(f"\n🤖 AI: {msg.content}")
